@@ -1,0 +1,32 @@
+// Colors
+$black: #000;
+$bunker: #121920;
+$white: #fff;
+$alabaster: #fafafa;
+$tuna: #3a3a43;
+$salt-box: #69676d;
+$lavender: #b17cd5;
+
+$color-text: $bunker;
+$color-placeholder: $salt-box;
+$color-background: $white;
+
+$color-add-icon: $lavender;
+$color-employee-icon: $tuna;
+
+$color-clear-button: $tuna;
+
+$color-sharp-border: $salt-box;
+$color-rounded-border: rgba($lavender, .6);
+
+//Fonts
+$font-size-base: 16px;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+
+$font-family-custom: "Roboto";
+$font-family-default: "Arial", "Helvetica", sans-serif;
+
+$font-family: $font-family-custom, $font-family-default;
+$font-path: '~@/assets/fonts';
