@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <button type="button" @click="openDialog">Диалоговое окно</button>
+  <div class="page" id="app">
+    <button type="submit" class="button button--covered button--dialog" @click="openDialog">Диалоговое окно</button>
     <DataForm :handleSubmit="handleSubmitData" />
     <Dialog :isModalOpen="isModalOpen">
       <CreateForm
@@ -45,4 +45,13 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.page {
+  width: 100%;
+  max-width: calc($container-width-desktop + 2 * $gap-container);
+  margin: $gap-container auto;
+  padding-left: $gap-container;
+  padding-right: $gap-container;
+
+}
+</style>

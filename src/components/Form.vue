@@ -1,14 +1,15 @@
 <template>
   <form :class="`form form--${formName}`" @submit.prevent="handleSubmit">
-    <p class="heading form__heading">{{ heading }}</p>
+    <p :class="`heading ${headingPosition} form__heading`">{{ heading }}</p>
     <div class="form__row">
       <div class="form__col">
         <div v-for="field in fields" :key="field.name" :class="`form__field`">
           <div
-            v-if="field.type === 'text'"
+            v-if="field.type === 'text' " 
             class="form__field-block form__field-block--input"
           >
-            <TextInput
+            <Input
+              :inputType="field.type"
               :name="field.name"
               :placeholder="field.placeholder"
               :hasComment="field.hasComment"
@@ -30,14 +31,16 @@
           </div>
 
           <div
-            v-else-if="field.type === 'number'"
+            v-if="field.type === 'number' " 
             class="form__field-block form__field-block--input"
           >
-            <NumberInput
+            <Input
+              :inputType="field.type"
               :name="field.name"
               :label="field.label"
               :max="field.max"
               :value="field.value"
+              @clearInput="clearInput()"
             />
           </div>
         </div>
@@ -46,10 +49,10 @@
     <div class="buttons">
       <ul class="buttons__list">
         <li class="buttons__item" v-if="formName === 'create'">
-          <button type="button" @click="handleCancel">Отмена</button>
+          <button type="button" class="button button--simple form__button" @click="handleCancel">Отмена</button>
         </li>
         <li class="buttons__item">
-          <button type="submit">Создать</button>
+          <button type="submit" class="button button--covered form__button">Создать</button>
         </li>
       </ul>
     </div>
@@ -57,18 +60,20 @@
 </template>
 
 <script>
-import NumberInput from './NumberInput.vue';
 import Select from './Select.vue';
-import TextInput from './TextInput.vue';
+import Input from './Input.vue';
 
 export default {
   name: 'Form',
-  components: { TextInput, Select, NumberInput },
+  components: { Select, Input },
   props: {
     formName: {
       type: String,
     },
     heading: {
+      type: String,
+    },
+    headingPosition: {
       type: String,
     },
     fields: {
@@ -87,4 +92,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.form {
+  max-width: 700px;
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}
+</style>

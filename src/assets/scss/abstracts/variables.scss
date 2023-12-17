@@ -10,8 +10,10 @@ $lavender: #b17cd5;
 $color-text: $bunker;
 $color-placeholder: $salt-box;
 $color-background: $white;
+$color-span: $salt-box;
+$color-label: $salt-box;
+$color-covered-button: $lavender;
 
-$color-add-icon: $lavender;
 $color-employee-icon: $tuna;
 
 $color-clear-button: $tuna;
@@ -19,8 +21,21 @@ $color-clear-button: $tuna;
 $color-sharp-border: $salt-box;
 $color-rounded-border: rgba($lavender, .6);
 
+
 //Fonts
 $font-size-base: 16px;
+
+$font-size-mini: 12px;
+$font-size-small: 14px;
+$font-size-normal: 18px;
+$font-size-medium: 24px;
+$font-size-big: 32px;
+
+$fz-heading-mobile: $font-size-medium;
+$fz-heading-tablet: $font-size-big;
+$fz-input: $font-size-small;
+$fz-span: $font-size-mini;
+$fz-label: $font-size-mini;
 
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -30,3 +45,11 @@ $font-family-default: "Arial", "Helvetica", sans-serif;
 
 $font-family: $font-family-custom, $font-family-default;
 $font-path: '~@/assets/fonts';
+
+
+// Breakpoints
+$screen-tablet: '(min-width: 768px)';
+
+// Layout
+$container-width-desktop: 1240px;
+$gap-container: 20px;

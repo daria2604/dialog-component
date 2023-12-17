@@ -1,6 +1,8 @@
 <template>
   <div class="dialog" id="dialog" :class="isModalOpen ? 'dialog--open' : ''">
-    <slot></slot>
+    <div class="dialog__container">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -29,10 +31,26 @@ export default {
   width: 100%;
   height: 100%;
 
-  background-color: pink;
+  background-color: rgba($black, .4);
+
+  z-index: 20;
+
+  content: "";
 
   &--open {
     display: block;
+  }
+
+  &__container {
+    position: relative;
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 30px 50px;
+
+    border-radius: 24px;
+    background-color: $color-background;
+
+    z-index: 30;
   }
 }
 </style>

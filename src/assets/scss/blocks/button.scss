@@ -1,0 +1,30 @@
+.button {
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    opacity: .85;
+    transition: all .2s ease;
+  }
+
+  &--simple {
+    border: none;
+    background-color: transparent;
+  }
+
+  &--covered {
+    padding: 8px 14px;
+
+    border-radius: 4px;
+    
+    background-color: $color-covered-button;
+    color: $white;
+  }
+
+  &--dialog {
+    margin-bottom: 40px;
+  }
+}

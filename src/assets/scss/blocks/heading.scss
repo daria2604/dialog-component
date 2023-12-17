@@ -1,0 +1,14 @@
+.heading {
+  font-size: $fz-heading-mobile;
+  font-weight: $font-weight-medium;
+
+  margin-bottom: 20px;
+
+  @media #{$screen-tablet} {
+    font-size: $fz-heading-tablet;
+  }
+
+  &--centered {
+    text-align: center;
+  }
+}

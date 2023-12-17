@@ -2,6 +2,7 @@
   <Form
     :formName="'create'"
     :heading="heading"
+    :headingPosition="'heading--centered'"
     :fields="fields"
     @handleCancel="closeCreateForm"
     @handleSubmit="createEmployee"
